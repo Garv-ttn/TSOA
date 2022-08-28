@@ -1,7 +1,7 @@
 import { app } from "./app";
 import dbconnect from "./db/dbconnect";
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 7070;
 
 dbconnect();
 app.listen(port, () =>

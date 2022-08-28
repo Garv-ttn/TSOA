@@ -1,4 +1,4 @@
-import {Body, Controller, Get, Path, Delete, Patch, Post, Query, Route, SuccessResponse,} from "tsoa";
+import {Body, Controller, Get, Path, Delete, Patch, Post, Query, Route, SuccessResponse, Put,} from "tsoa";
 import { User } from "./user";
 import User1 from '../schema/userSchema' 
 import { FlattenMaps, LeanDocument} from "mongoose";
@@ -18,7 +18,9 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       status:number,
       data: {
         name:string,
-        email:string
+        email:string,
+        empid:string,
+        designation:string
       } ,
       message:string
     }> {
@@ -26,6 +28,8 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       const user2= {
           name:user.name,
           email:user.email,
+          empid:user.empid,
+          designation:user.designation
       }
       return {status:200, data:user2, message:'fetched'}      
     }
@@ -52,7 +56,9 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       status:number,
       data:{
         name:string,
-        email:string
+        email:string,
+        empid:string,
+        designation:string
       },
       message:string
     }>{
@@ -61,7 +67,9 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       const user =  new User1(requestBody);
       const userCreated ={
         name:user.name,
-        email:user.email
+        email:user.email,
+        empid:user.empid,
+        designation:user.designation
       }
       console.log(user);     
 
@@ -78,6 +86,8 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       data:FlattenMaps<LeanDocument<{
         name?: string;
         email?: string;
+        empid?: string;
+        designation?: string;
     }>>,
       message:string
     }>{
@@ -87,7 +97,7 @@ import { FlattenMaps, LeanDocument} from "mongoose";
 
     //------------------------------------------Updating User----------------------------------------------//
     @SuccessResponse("201", "Updated") 
-    @Patch('{userId}')
+    @Put('{userId}')
     public async updateUserReq(
       @Path() userId: string,
       @Body() requestBody: User
@@ -96,6 +106,8 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       data:FlattenMaps<LeanDocument<{
         name?: string;
         email?: string;
+        empid?: string;
+        designation?: string;
     }>>,
       message:string
     }>{

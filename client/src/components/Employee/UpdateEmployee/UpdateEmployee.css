@@ -1,0 +1,68 @@
+#link-signin{
+    text-decoration: none;
+    cursor: pointer;
+    color: rgb(128, 128, 255);
+}
+.form{
+    display: flex;
+    justify-content: center ;
+    background: rgba(236,236,236,0.7);
+}
+.body{    
+    height: 100%;
+    width: 60%;
+    box-shadow: 0rem 0rem 2rem 0.1rem grey;
+    margin: 2rem auto;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.container{
+    height: 80%;
+    width: 60%;
+    margin: 2rem auto;
+           
+}
+label{
+    display: block;
+    text-align: left;
+    width: 70%;
+    margin: auto;
+    font-size: small;
+    color: grey;
+    margin-bottom: 0.5rem;
+}
+
+input{
+    display: block;
+    border: none;
+    height: 2rem;
+    width : 70%;    
+    margin: auto;
+    margin-bottom: 1.5rem;
+    padding: 0.2rem 1rem;
+    color: grey;
+    transition: all 0.1s ease-in-out;
+}
+input:focus{
+    outline: none;
+    border: none;
+}
+input:hover{
+    outline: 0.5px solid #4d84d6;
+    box-shadow: 2px 2px 9px -1px #4d84d6;
+}
+#sub-btn{
+    width: 15%;
+    background: #4d84d6;
+    color: white;
+    border: none;
+    cursor: pointer;
+    height: 6vh;
+    border-radius: 10%;
+    transition: all 0.3 ease;
+    margin-left: 25rem;
+}
+#sub-btn:hover{
+box-shadow: 4px 3px 9px -1px grey;
+transform: translateY(-1px);
+}

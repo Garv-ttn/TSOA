@@ -14,9 +14,9 @@ services:
   api:
     build: .
     ports:
-      - 8080:3000
+      - 8080:7070
     environment:
-        PORT: 3000
+        PORT: 7070
         MONGODB_URI : mongodb://mongo_db:27017
         DB_NAME : TSOA
         NAME : TSOA_SERVER
