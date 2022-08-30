@@ -1,6 +1,7 @@
 import React,{useEffect,useState} from 'react'
 import { Link } from "react-router-dom";
 import axios from 'axios';
+import './GetEmployee.css'
 
 function GetEmployee() {
 
@@ -25,22 +26,18 @@ function GetEmployee() {
     
 
     const deleteEmployee = async(userId)=>{
-      const res = await axios.delete(`http://localhost:7070/users/${userId}`,{
-        headers: {
-            "Access-Control-Allow-Origin": 'http://localhost:7070'
-        },
-      
-      });
+      const res = await axios.delete(`http://localhost:7070/users/${userId}`);
       console.log(res);
       setDeletedEmp(p=>!p)
     }
   return (
     <div>
-      <Link to={`/create`}><button>Click me to create a new user</button></Link>
+      <Link to={`/create`}><button type="submit" id='sub-btn2'>Click me to create a new user</button></Link>
         {employees.map((emp) => (
-            <div key={emp._id}><p>{emp.name}</p>
-                <Link to={`/update/${emp._id}`}><button>Click me to update</button></Link>
-                <button onClick={()=>deleteEmployee(emp._id)}>Click me to delete</button>
+            <div key={emp._id}><b><p>{emp.name}</p></b>
+                <Link to={`/update/${emp._id}`}><button type="submit" id='sub-btn1'>Click me to update</button></Link>
+                <button type="submit" id='sub-btn1' style={{backgroundColor : 'red'}} onClick={()=>deleteEmployee(emp._id)}>Click me to delete</button>
+                <Link to={`/getemp/${emp._id}`}><button type="submit" id='sub-btn1'>Click me to get more info</button></Link>
             </div>            
         ))}
     </div>

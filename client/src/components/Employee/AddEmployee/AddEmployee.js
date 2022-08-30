@@ -26,7 +26,7 @@ function AddEmployee(){
                     navigate('/')             
              }
              else{
-                 alert('User can only sign-up using To The New official email-ID. Kindly try again!!');
+                 alert('Employee can only be creayed using To The New official email-ID. Kindly try again!!');
              } 
             
             }                        
@@ -63,7 +63,7 @@ function AddEmployee(){
                                    value={designation} 
                                    onChange={(e)=>{setDesignation(e.target.value)}}
                             />
-                            <button type="submit" id='sub-btn' >Create User</button>
+                            <button type="submit" id='sub-btn' >Create Employee</button>
                         </form>
                 </div>
                
