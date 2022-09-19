@@ -24,6 +24,7 @@ import { FlattenMaps, LeanDocument} from "mongoose";
       } ,
       message:string
     }> {
+      
       const user = (await User1.findById(userId));
       const user2= {
           name:user.name,
