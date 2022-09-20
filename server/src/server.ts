@@ -1,4 +1,5 @@
 const express = require('express');
+const redis = require("redis");
 import { app } from "./app";
 import dbconnect from "./db/dbconnect";
 
@@ -12,6 +13,9 @@ app.get(['/','/*'],(req,res)=>{
 
 
 const port = process.env.PORT || 7070;
+const redis_port = process.env.PORT || 6379;
+
+
 
 dbconnect();
 app.listen(port, () =>
