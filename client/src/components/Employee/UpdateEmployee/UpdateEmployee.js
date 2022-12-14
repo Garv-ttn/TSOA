@@ -13,14 +13,8 @@ function UpdateEmployee(){
     const[empid,setEmpid]= useState('');
     const[designation,setDesignation]= useState('');
 
-
-
     const params = useParams()
-
     const navigate = useNavigate();
-
-
-
 
     const handleSubmit=(e)=>{
         e.preventDefault();

@@ -13,11 +13,7 @@ function GetEmployee() {
 
     useEffect(() => {
         const getEmp= async()=>{
-                const res = await axios.get('http://localhost:7070/users',{
-                    headers: {
-                        "Access-Control-Allow-Origin": 'http://localhost:7070'
-                    },
-                  });
+                const res = await axios.get('http://localhost:7070/users');
                 console.log(res.data.data)
                  setEmployees(res.data.data);            
         }
